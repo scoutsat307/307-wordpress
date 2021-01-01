@@ -1,0 +1,22 @@
+{
+  "name": "scoutsat307",
+  "version": "1.0.0",
+  "description": "Wordpress theme for Troop 307",
+  "author": "Michael Thomas <michaelhthomas@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "css-build": "node-sass static/_sass/main.scss theme/style.css",
+    "css-deploy": "npm run css-build && npm run css-postcss",
+    "css-postcss": "postcss --use autoprefixer --output css/main.css style.css",
+    "css-watch": "npm run css-build -- --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "bulma": "^0.9.1",
+    "bulma-helpers": "^0.3.12",
+    "bulmaswatch": "^0.8.1",
+    "node-sass": "^5.0.0",
+    "postcss-cli": "^8.3.1"
+  }
+}

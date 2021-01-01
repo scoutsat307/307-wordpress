@@ -1,0 +1,46 @@
+<nav
+  class="navbar"
+  role="navigation"
+  aria-label="primary navigation"
+>
+  <div class="container">
+    <div class="navbar-brand">
+        <a
+          class="navbar-item"
+          href="{{ site.url }}"
+        >
+          <img
+            src="{{ static_uri }}/images/logo.svg"
+          >
+          <span
+            class="has-text-weight-bold is-size-5"
+            style="padding-left: 0.5rem;"
+          >
+            {{ site.name }}
+          </span>
+        </a>
+      <a
+        role="button"
+        class="navbar-burger burger"
+        data-target="navMenu"
+        aria-label="menu"
+        aria-expanded="false"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div
+      class="navbar-menu"
+      id="navMenu"
+    >
+      <div 
+        class="navbar-end"
+      >
+        {% include "partials/_menu.twig" with {'items': menu.get_items} %}
+      </div>
+    </div>
+  </div>
+</nav>

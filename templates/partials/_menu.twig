@@ -1,0 +1,7 @@
+{% if menu %}
+  {% for item in items %}
+    <a class="navbar-item {{ item.current ? "is-active" }} {{ item.classes | join(' ') }}" target="{{ item.target }}"
+      href="{{ item.link }}">{{ item.title }}</a>
+    {% include "partials/_menu.twig" with {'items': item.children} %}
+  {% endfor %}
+{% endif %}
