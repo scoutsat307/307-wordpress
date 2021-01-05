@@ -6,17 +6,19 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "css-build": "node-sass static/_sass/main.scss theme/style.css",
-    "css-deploy": "npm run css-build && npm run css-postcss",
-    "css-postcss": "postcss --use autoprefixer --output css/main.css style.css",
-    "css-watch": "npm run css-build -- --watch"
+    "parcel:watch-js": "parcel watch static/_js/* --no-source-maps --out-dir static/dist/",
+    "parcel:build-js": "parcel build static/_js/* --no-source-maps --out-dir static/dist/",
+    "parcel:watch-css": "parcel watch static/_sass/main.scss --no-source-maps --no-hmr --out-dir static/dist/",
+    "parcel:build-css": "parcel build static/_sass/main.scss --no-source-maps --out-dir static/dist/",
+    "serve": "run-p parcel:watch-js parcel:build-css",
+    "build": "run-s parcel:build-js parcel:build-css"
   },
   "devDependencies": {
-    "autoprefixer": "^10.1.0",
     "bulma": "^0.9.1",
     "bulma-helpers": "^0.3.12",
     "bulmaswatch": "^0.8.1",
-    "node-sass": "^5.0.0",
-    "postcss-cli": "^8.3.1"
+    "npm-run-all": "^4.1.5",
+    "parcel": "^1.12.4",
+    "sass": "^1.32.0"
   }
 }

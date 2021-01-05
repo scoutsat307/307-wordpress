@@ -1,14 +1,8 @@
-/*
- * Theme Name: Troop 307
- * Description: Wordpress theme for Troop 307
- * Author: Michael Thomas <michaelhthomas@outlook.com>
-*/
-
 @charset "utf-8";
 
 // Bulmaswatch
-@import "../node_modules/bulmaswatch/materia/variables";
-@import "../node_modules/bulma/sass/utilities/functions";
+@import "~bulmaswatch/materia/variables";
+@import "~bulma/sass/utilities/functions";
 
 // Custom variables
 $primary: #013A7A;
@@ -19,9 +13,9 @@ $custom-colors: (
   "secondary": ($secondary, $secondary-invert),
 );
 
-@import "../node_modules/bulma/bulma";
-@import "../node_modules/bulma-helpers/bulma-helpers";
-@import "../node_modules/bulmaswatch/materia/overrides";
+@import "~bulma";
+@import "~bulma-helpers";
+@import "~bulmaswatch/materia/overrides";
 
 // Footer Styles
 html {
