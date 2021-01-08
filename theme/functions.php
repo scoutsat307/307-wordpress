@@ -9,6 +9,12 @@
  */
 
 /**
+ * Load custom editor class
+ */
+require get_template_directory() . '/classes/class-scoutsat307-gutenburg-custom-styles.php';
+new ScoutsAt307_Gutenburg_Custom_Styles();
+ 
+/**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
