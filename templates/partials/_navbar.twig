@@ -2,6 +2,7 @@
   class="navbar"
   role="navigation"
   aria-label="primary navigation"
+  x-data="{ open: false }"
 >
   <div class="container">
     <div class="navbar-brand">
@@ -13,7 +14,7 @@
             src="{{ static_uri }}/images/logo.svg"
           >
           <span
-            class="has-text-weight-bold is-size-5"
+            class="wp-blogname has-text-weight-bold is-size-5"
             style="padding-left: 0.5rem;"
           >
             {{ site.name }}
@@ -22,9 +23,11 @@
       <a
         role="button"
         class="navbar-burger burger"
+        :class="{ 'is-active': open == true }"
         data-target="navMenu"
         aria-label="menu"
         aria-expanded="false"
+        @click="open = true"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -34,7 +37,9 @@
 
     <div
       class="navbar-menu"
-      id="navMenu"
+      :class="{ 'is-active': open == true }"
+      id="navMenu"=
+      @click.away="open = false"
     >
       <div 
         class="navbar-end"

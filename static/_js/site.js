@@ -1,2 +1,3 @@
+import 'alpinejs';
+
 import './components/fixFooter';
-import './components/navbarBurgers';
