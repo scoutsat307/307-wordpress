@@ -13,6 +13,17 @@
  */
 require get_template_directory() . '/classes/class-scoutsat307-gutenburg-custom-styles.php';
 new ScoutsAt307_Gutenburg_Custom_Styles();
+
+/**
+ * Customizer additions
+ */
+require get_template_directory() . '/classes/class-scoutsat307-customize.php';
+new ScoutsAt307_Customize();
+
+/**
+ * Require plugin dependencies
+ */
+require_once get_template_directory() . '/require-plugins.php';
  
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block

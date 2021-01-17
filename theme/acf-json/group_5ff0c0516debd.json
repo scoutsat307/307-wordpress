@@ -1,0 +1,43 @@
+{
+    "key": "group_5ff0c0516debd",
+    "title": "Photos",
+    "fields": [
+        {
+            "key": "field_5ff0c06d98d37",
+            "label": "Images",
+            "name": "images",
+            "type": "photo_gallery",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "fields[images": {
+                "edit_modal": "Default",
+                "images_limit": ""
+            },
+            "edit_modal": "Default"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "photos"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1610146253
+}
