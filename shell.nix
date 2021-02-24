@@ -9,6 +9,6 @@
 
       # Php Deps
       php74
-      php74Packages.composer
+      php74Packages.composer2
     ];
 }
