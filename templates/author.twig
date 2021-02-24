@@ -2,6 +2,6 @@
 
 {% block content %}
 	{% for post in posts %}
-		{% include ["partials/_tease-"~post.post_type~".twig", "partials/_tease.twig"] %}
+		{% include ["partials/_tease-" ~ post.post_type ~ ".twig", "partials/_tease.twig"] %}
 	{% endfor %}
 {% endblock %}

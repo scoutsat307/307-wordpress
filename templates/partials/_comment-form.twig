@@ -1,6 +1,6 @@
 <div class="comment-form">
 	<h2 class="is-size-3 mb-4">Leave a comment</h2>
-	<form class="comment-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
+	<form class="comment-form" method="post" action="{{ site.site_url ~ '/wp-comments-post.php' }}">
 		{% if user %}
 			<input type="hidden" name="email" value="{{ user.email }}">
 			<input type="hidden" name="author" value="{{ user.name }}">
@@ -43,7 +43,7 @@
 				<button type="reset" name="Reset" class="button is-primary is-light">Cancel</button>
 			</div>
 		</div>
-		
+
 		<input name="comment_post_ID" value="{{ post.id }}" type="hidden">
 		<input name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
 	</form>

@@ -1,0 +1,16 @@
+<article class="media blog-comment {{ comment.comment_type }}" id="blog-comment-{{ comment.ID }}">
+	<figure class="media-left">
+		<p class="image is-64x64">
+			<img src={{ comment.author.avatar }}>
+		</p>
+	</figure>
+	<div class="media-content">
+		<div class="content">
+			<p>
+				<strong>{{ comment.author.name }}</strong> <small>{{ comment.date }}</small>
+				<br>
+				{{ comment.comment_content }}
+			</p>
+		</div>
+	</div>
+</article>

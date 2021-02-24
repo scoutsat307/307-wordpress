@@ -2,33 +2,32 @@
 
 {% block page %}
 	<div class="content-wrapper">
-    <section class="hero is-medium is-primary has-background">
-      <div class="hero-background">
-  
-      </div>
-      <div class="hero-body">
-        <div class="container">
-          <h1
-            v-if="showTitle"
-            class="title is-2"
-          >
-            {{ post.hero_title ? post.hero_title : post.title }}
-          </h1>
-          <h2 class="subtitle">
-            {{ post.meta('hero_content') }}
-          </h2>
-        </div>
-      </div>
-    </section>
+		<section class="hero is-medium is-primary has-background">
+			<div class="hero-background">
+			</div>
+			<div class="hero-body">
+				<div class="container">
+					<h1
+						v-if="showTitle"
+						class="title is-2"
+					>
+						{{ post.hero_title ? post.hero_title : post.title }}
+					</h1>
+					<h2 class="subtitle">
+						{{ post.meta('hero_content') }}
+					</h2>
+				</div>
+			</div>
+		</section>
 
 		<article class="section post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-      <div class="container">
-        <section class="article-content">
-          <div class="content article-body">
-            {{ post.content }}
-          </div>
-        </section>
-      </div>
+			<div class="container">
+				<section class="article-content">
+					<div class="content article-body">
+						{{ post.content }}
+					</div>
+				</section>
+			</div>
 		</article>
 	</div><!-- /content-wrapper -->
 {% endblock %}

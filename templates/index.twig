@@ -3,9 +3,8 @@
 {% block page %}
 	<section class="hero is-medium is-primary has-background">
 		<div class="hero-background">
-			{% for imageID in theme.theme_mod('homepage_slideshow', '') %}
-				{% set image = Image(imageID) %}
-				
+			{% for image_id in theme.theme_mod('homepage_slideshow', '') %}
+				{% set image = Image(image_id) %}
 				<img src="{{ image.src }}">
 			{% endfor %}
 		</div>
@@ -35,12 +34,12 @@
 	</section>
 
 	<section class="section posts">
-    <div class="container">
+		<div class="container">
 			{% for post in posts %}
-				{% include ['partials/_tease-'~post.post_type~'.twig', 'partials/_tease.twig'] %}
+				{% include ['partials/_tease-' ~ post.post_type ~ '.twig', 'partials/_tease.twig'] %}
 			{% endfor %}
 
-			{% include 'partials/_pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+			{% include 'partials/_pagination.twig' with {pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2})} %}
 		</div>
 	</section>
 {% endblock page %}

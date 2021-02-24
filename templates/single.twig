@@ -9,12 +9,12 @@
 				<div class="has-text-centered">
 					<h1 class="title is-1 article-h1">{{ post.title }}</h1>
 					<p class="blog-author content subtitle is-size-6">
-						<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+						<span>By</span><a href="{{ post.author.path }}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
 					</p>
 				</div>
 
 				<div class="post content section article-body">
-					{{post.content}}
+					{{ post.content }}
 				</div>
 			</section>
 
@@ -26,7 +26,7 @@
 						{% if post.comments %}
 							<h1 class="is-size-2 mb-4">Comments</h1>
 							{% for cmt in post.comments %}
-								{% include "comment.twig" with {comment:cmt} %}
+								{% include "partials/_comment.twig" with {comment: cmt} %}
 							{% endfor %}
 						{% endif %}
 					</div>
@@ -36,7 +36,7 @@
 					{% else %}
 						<hr />
 						<!-- comment form -->
-						{% include "comment-form.twig" %}
+						{% include "partials/_comment-form.twig" %}
 					{% endif %}
 				</section>
 			{% endif %}

@@ -1,36 +1,36 @@
 {% if posts.pagination.pages is not empty %}
-  <nav class="pagination" role="navigation" aria-label="pagination">
-    {# Previous #}
-    {% if posts.pagination.prev %}
-      <a class="pagination-previous" href="{{ posts.pagination.prev.link }}">
-        Previous
-      </a>
-    {% else %}
-      <a class="pagination-previous" disabled>
-        Previous
-      </a>
-    {% endif %}
+	<nav class="pagination" role="navigation" aria-label="pagination">
+		{# Previous #}
+		{% if posts.pagination.prev %}
+			<a class="pagination-previous" href="{{ posts.pagination.prev.link }}">
+				Previous
+			</a>
+		{% else %}
+			<a class="pagination-previous" disabled>
+				Previous
+			</a>
+		{% endif %}
 
-    {# Next #}
-    {% if posts.pagination.next %}
-      <a class="pagination-next" href="{{ posts.pagination.next.link }}">Next</a>
-    {% else %}
-      <a class="pagination-next" disabled>Next</a>
-    {% endif %}
+		{# Next #}
+		{% if posts.pagination.next %}
+			<a class="pagination-next" href="{{ posts.pagination.next.link }}">Next</a>
+		{% else %}
+			<a class="pagination-next" disabled>Next</a>
+		{% endif %}
 
-    <ul class="pagination-list">
-      {# Pages #}
-      {% for page in posts.pagination.pages %}
-        {% if page.link %}
-          <li>
-            <a href="{{ page.link }}" class="pagination-link {{ page.class }}">{{ page.title }}</a>
-          </li>
-        {% else %}
-          <li>
-            <a class="pagination-link is-current {{ page.class }}">{{ page.title }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
+		<ul class="pagination-list">
+			{# Pages #}
+			{% for page in posts.pagination.pages %}
+				{% if page.link %}
+					<li>
+						<a href="{{ page.link }}" class="pagination-link {{ page.class }}">{{ page.title }}</a>
+					</li>
+				{% else %}
+					<li>
+						<a class="pagination-link is-current {{ page.class }}">{{ page.title }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</nav>
 {% endif %}

@@ -1,21 +1,21 @@
 {% extends 'partials/_base.twig' %}
 
 {% block head %}
-  <style>
-    html, body {
-      overflow: hidden;
-    }
-    #photoMain {
-      height: calc(100vh - 64px);
-    }
-    #photoFrame {
-      width:100%;height:100%;
-    }
-  </style>
+	<style>
+		html, body {
+			overflow: hidden;
+		}
+		#photoMain {
+			height: calc(100vh - 64px);
+		}
+		#photoFrame {
+			width:100%;height:100%;
+		}
+	</style>
 {% endblock head %}
 
 {% block body %}
-  <main id="photoMain">
-    <iframe id="photoFrame" src="{{ post.gallery_url }}"></iframe>
-  </main>
+	<main id="photoMain">
+		<iframe id="photoFrame" src="{{ post.gallery_url }}"></iframe>
+	</main>
 {% endblock body %}

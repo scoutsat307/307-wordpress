@@ -1,51 +1,51 @@
 <nav
-  class="navbar"
-  role="navigation"
-  aria-label="primary navigation"
-  x-data="{ open: false }"
+	class="navbar"
+	role="navigation"
+	aria-label="primary navigation"
+	x-data="{ open: false }"
 >
-  <div class="container">
-    <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="{{ site.url }}"
-        >
-          <img
-            src="{{ static_uri }}/images/logo.svg"
-          >
-          <span
-            class="wp-blogname has-text-weight-bold is-size-5"
-            style="padding-left: 0.5rem;"
-          >
-            {{ site.name }}
-          </span>
-        </a>
-      <a
-        role="button"
-        class="navbar-burger burger"
-        :class="{ 'is-active': open == true }"
-        data-target="navMenu"
-        aria-label="menu"
-        aria-expanded="false"
-        @click="open = true"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+	<div class="container">
+		<div class="navbar-brand">
+				<a
+					class="navbar-item"
+					href="{{ site.url }}"
+				>
+					<img
+						src="{{ static_uri }}/images/logo.svg"
+					>
+					<span
+						class="wp-blogname has-text-weight-bold is-size-5"
+						style="padding-left: 0.5rem;"
+					>
+						{{ site.name }}
+					</span>
+				</a>
+			<a
+				role="button"
+				class="navbar-burger burger"
+				:class="{ 'is-active': open == true }"
+				data-target="navMenu"
+				aria-label="menu"
+				aria-expanded="false"
+				@click="open = true"
+			>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
 
-    <div
-      class="navbar-menu"
-      :class="{ 'is-active': open == true }"
-      id="navMenu"=
-      @click.away="open = false"
-    >
-      <div 
-        class="navbar-end"
-      >
-        {% include "partials/_menu.twig" with {'items': menu.get_items} %}
-      </div>
-    </div>
-  </div>
+		<div
+			class="navbar-menu"
+			:class="{ 'is-active': open == true }"
+			id="navMenu"=
+			@click.away="open = false"
+		>
+			<div
+				class="navbar-end"
+			>
+				{% include "partials/_menu.twig" with {'items': menu.get_items} %}
+			</div>
+		</div>
+	</div>
 </nav>
