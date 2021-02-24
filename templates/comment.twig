@@ -1,21 +1,29 @@
-<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
-	<h5 class="comment-author">{{comment.author.name}} says</h5>
-	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
-
-	<section class="comment-box">
-		
-		<!-- comment form -->
-		{% include "comment-form.twig" %}
-
-		<!-- child comments -->
-		{% if post.comments %}
-			<h4> replies </h4>
-			<div class="comments">
-				{% for cmt in comment.children %}
-					{% include "comment.twig" with {comment:cmt} %}
-				{% endfor %}
-			</div>
-		{% endif %}
-
-	</section>
-</div>
+<article class="media blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src={{comment.author.avatar}}>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{comment.author.name}}</strong> <small>{{comment.date}}</small>
+        <br>
+        {{comment.comment_content}}
+      </p>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</article>
