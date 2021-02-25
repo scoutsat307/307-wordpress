@@ -2,9 +2,12 @@
 
 {% block page %}
 	<div class="content-wrapper">
-		<section class="hero is-medium is-primary has-background">
-			<div class="hero-background">
-			</div>
+		<section class="hero is-medium is-primary {{ post.thumbnail ? "has-background" : "" }}">
+			{% if post.thumbnail %}
+				<div class="hero-background">
+					<img src={{ post.thumbnail.src }}>
+				</div>
+			{% endif %}
 			<div class="hero-body">
 				<div class="container">
 					<h1
