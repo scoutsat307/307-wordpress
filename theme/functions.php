@@ -24,6 +24,11 @@ new ScoutsAt307_Customize();
  * Require plugin dependencies
  */
 require_once get_template_directory() . '/require-plugins.php';
+
+/**
+ * Pull in Lazy Blocks templates
+ */
+require_once get_template_directory() . '/lazyblocks.php';
  
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
