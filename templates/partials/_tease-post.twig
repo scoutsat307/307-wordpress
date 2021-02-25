@@ -1,19 +1,32 @@
 {% extends "partials/_tease.twig" %}
 
 {% block content %}
-	<h2 class="is-size-4 has-text-weight-bold"><a href="{{ post.link }}">{{ post.title }}</a></h2>
-	<p class="content">{{ post.preview.length(50) }}</p>
 	{% if post.thumbnail.src %}
-		<img src="{{ post.thumbnail.src }}" />
+		<a href={{ post.link }} class="card-image">
+			<figure class="image is-16by9">
+				<img alt="Cover image" src={{ post.thumbnail.src }} style="object-fit: cover;">
+			</figure>
+		</a>
 	{% endif %}
 
-	<div class="card-footer">
-		<div class="tags card-footer-item">
-			{% for tag in post.tags %}
-				<a href="{{ tag.link }}" class="tag">
-					{{ tag.name }}
-				</a>
-			{% endfor %}
+	<div class="card-body is-flex is-flex-direction-column">
+		<div class="card-content">
+			<h2 class="is-size-4 has-text-weight-bold"><a href={{ post.link }}>{{ post.title }}</a></h2>
+			<p class="content">{{ post.preview.length(75).force }}</p>
 		</div>
+	
+		<div class="spacer is-flex-grow-1"></div>
+
+		{% if post.tags %}
+			<div class="card-footer">
+				<div class="tags card-footer-item">
+					{% for tag in post.tags %}
+						<a href={{ tag.link }} class="tag has-text-weight-bold">
+							#{{ tag.name|upper }}
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
 	</div>
 {% endblock %}

@@ -14,3 +14,39 @@
   height: 100%;
   filter: brightness(80%);
 }
+
+// Horizontal cards
+@media (min-width: $tablet) {
+  .card.is-horizontal  {
+    display: flex;
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    .card-image {
+      flex: 4 1;
+      order: 2;
+
+      .image {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    .card-body {
+      flex: 3;
+    }
+    .card-body > * {
+      width: 100%;
+    }
+  }
+}
