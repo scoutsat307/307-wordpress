@@ -1,22 +1,3 @@
-@charset "utf-8";
-
-// Bulmaswatch
-@import "~bulmaswatch/materia/variables";
-@import "~bulma/sass/utilities/functions";
-
-// Custom variables
-$primary: #013A7A;
-
-$secondary: #e53935;
-$secondary-invert: findColorInvert($secondary) !default;
-$custom-colors: (
-  "secondary": ($secondary, $secondary-invert),
-);
-
-@import "~bulma";
-@import "~bulma-helpers";
-@import "~bulmaswatch/materia/overrides";
-
 // Footer Styles
 html {
   position: relative;

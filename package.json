@@ -8,9 +8,9 @@
   "scripts": {
     "parcel:watch-js": "parcel watch static/_js/* --no-source-maps --out-dir static/dist/",
     "parcel:build-js": "parcel build static/_js/* --no-source-maps --out-dir static/dist/",
-    "parcel:watch-css": "parcel watch static/_sass/main.scss --no-source-maps --no-hmr --out-dir static/dist/",
-    "parcel:build-css": "parcel build static/_sass/main.scss --no-source-maps --out-dir static/dist/",
-    "serve": "run-p parcel:watch-js parcel:build-css",
+    "parcel:watch-css": "parcel watch static/_sass/* --no-source-maps --no-hmr --out-dir static/dist/",
+    "parcel:build-css": "parcel build static/_sass/* --no-source-maps --out-dir static/dist/",
+    "serve": "run-p parcel:watch-js parcel:watch-css",
     "build": "run-s parcel:build-js parcel:build-css"
   },
   "devDependencies": {

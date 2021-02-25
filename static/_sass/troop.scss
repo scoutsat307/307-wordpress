@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import "~bulma/sass/utilities/functions";
+
+// Custom variables
+$primary: #013A7A;
+
+$secondary: #e53935;
+$secondary-invert: findColorInvert($secondary) !default;
+$custom-colors: (
+  "secondary": ($secondary, $secondary-invert),
+);
+
+@import "includes/variables";
+
+@import "~bulma";
+@import "~bulma-helpers";
+
+@import "includes/custom";
+@import "includes/footer";
